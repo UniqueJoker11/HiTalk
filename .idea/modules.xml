@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hitalkspace.iml" filepath="$PROJECT_DIR$/hitalkspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiTalkSpace-Core/hitalkspace-core.iml" filepath="$PROJECT_DIR$/HiTalkSpace-Core/hitalkspace-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiTalkSpace-Model/hitalkspace-model.iml" filepath="$PROJECT_DIR$/HiTalkSpace-Model/hitalkspace-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiTalkSpace-Service/hitalkspace-service.iml" filepath="$PROJECT_DIR$/HiTalkSpace-Service/hitalkspace-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiTalkSpace-Utils/hitalkspace-utils.iml" filepath="$PROJECT_DIR$/HiTalkSpace-Utils/hitalkspace-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HiTalkSpace-Web/hitalkspace-web.iml" filepath="$PROJECT_DIR$/HiTalkSpace-Web/hitalkspace-web.iml" />
+    </modules>
+  </component>
+</project>
