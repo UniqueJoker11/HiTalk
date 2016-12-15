@@ -12,11 +12,9 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!--扫描service类-->
-    <context:component-scan base-package="colin.web.hitalkspace"/>
+    <context:component-scan base-package="colin.web.hitalkspace.business;colin.web.hitalkspace.service;colin.web.hitalkspace.handler" use-default-filters="false"/>
     <!--加入切面注解-->
     <aop:aspectj-autoproxy/>
-    <!--引入数据源配置-->
-    <import resource="classpath:spring-datasource.xml"/>
     <!--引入切面事务传播行文-->
     <tx:advice id="taAdvice" transaction-manager="txManager">
         <tx:attributes>
