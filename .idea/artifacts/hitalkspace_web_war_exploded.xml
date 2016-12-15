@@ -12,11 +12,7 @@
           </element>
           <element id="library" level="project" name="Maven: hitalkspace:hitalkspace-core:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: hitalkspace:hitalkspace-model:1.0-SNAPSHOT" />
-          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.0.1" />
-          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.0.1" />
-          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.6.0" />
-          <element id="library" level="project" name="Maven: com.squareup.okhttp:okhttp:2.5.0" />
-          <element id="library" level="project" name="Maven: hitalkspace:colin.web.hitalkspace-utils:1.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: hitalkspace:hitalkspace-utils:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" />
@@ -53,6 +49,9 @@
           <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.2" />
           <element id="library" level="project" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.1" />
           <element id="library" level="project" name="Maven: org.antlr:antlr4-annotations:4.2" />
+          <element id="library" level="project" name="Maven: com.ibeetl:btjson:0.94" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-hibernate4:2.5.3" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.3.1" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: cglib:cglib:3.1" />
@@ -68,7 +67,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/HiTalkSpace-Web/target/hitalkspace-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="G:\opensource\HiTalk\HiTalkSpace-Web\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="hitalkspace-web/web/Web" />
     </root>

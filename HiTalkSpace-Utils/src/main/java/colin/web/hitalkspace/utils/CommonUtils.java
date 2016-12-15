@@ -6,5 +6,6 @@ package colin.web.hitalkspace.utils;
  * 项目名称 HiTalkSpace
  * 当前包名 colin.web.hitalkspace.utils
  */
+
 public class CommonUtils {
 }

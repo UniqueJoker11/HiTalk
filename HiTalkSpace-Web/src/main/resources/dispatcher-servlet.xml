@@ -9,6 +9,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--配置注解导入-->
     <context:component-scan base-package="colin.web.hitalkspace.controller"/>
+    <!--sop动态配置-->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
@@ -19,17 +20,17 @@
 
     <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-            <property name="basenames">
-                   <list>
-                          <!--在web环境中一定要定位到classpath 否则默认到当前web应用下找-->
-                          <value>classpath:message/error_message</value>
-                         <!-- <value>classpath:org/hibernate/validator/ValidationMessages</value>-->
-                   </list>
-            </property>
-            <property name="useCodeAsDefaultMessage" value="false"/>
-            <property name="defaultEncoding" value="UTF-8"/>
-            <property name="cacheSeconds" value="60"/>
-     </bean>
+        <property name="basenames">
+            <list>
+                <!--在web环境中一定要定位到classpath 否则默认到当前web应用下找-->
+                <value>classpath:message/error_message</value>
+                <!-- <value>classpath:org/hibernate/validator/ValidationMessages</value>-->
+            </list>
+        </property>
+        <property name="useCodeAsDefaultMessage" value="false"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="cacheSeconds" value="60"/>
+    </bean>
     <!--Beetl视图解析器 -->
     <bean id="beetlConfig" class="org.beetl.ext.spring.BeetlGroupUtilConfiguration"
           init-method="init"/>
@@ -92,9 +93,17 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
+    <!--springmvc处理静态资源，默认default-->
+    <mvc:default-servlet-handler/>
+    <!--静态资源的位置-->
+    <mvc:resources mapping="/fonts/**" location="/resources/fonts/"/>
+    <mvc:resources mapping="/js/**" location="/resources/js/"/>
+    <mvc:resources mapping="/css/**" location="/resources/css/"/>
+    <mvc:resources mapping="/images/**" location="/resources/images/"/>
     <!--处理文件上传是所需要的文件 -->
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="UTF-8"></property>
     </bean>
+    <!--加载service配置文件-->
 </beans>

@@ -36,10 +36,6 @@
                 <param-name>log4jRefreshInterval</param-name>
                 <param-value>3000</param-value>
         </context-param>
-        <context-param>
-                <param-name/>
-                <param-value/>
-        </context-param>
         <!--配置log4j结束 -->
         <!-- 防止发生java.beans.Introspector内存泄露,应将它配置在ContextLoaderListener的前面 -->
         <!-- JDK中的java.beans.Introspector类的用途是发现Java类是否符合JavaBean规范  -->
@@ -50,7 +46,7 @@
         <listener>
                 <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
         </listener>
-        <!--Spring dispatcher配置-->
+        <!--Spring web配置-->
         <servlet>
                 <servlet-name>dispatcher</servlet-name>
                 <servlet-class>
