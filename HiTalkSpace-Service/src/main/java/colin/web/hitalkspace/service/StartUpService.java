@@ -15,7 +15,6 @@ public class StartUpService {
     @Autowired
     private ImServerService serverService;
 
-    @PostConstruct
     public void initStartService(){
         //启动IMServer
         serverService.startImServer();

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HiTalkSpace-Core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HiTalkSpace-Core/src/main/java/colin/web/hitalkspace/core/dao/PropsDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HiTalkSpace-Core/src/main/java/colin/web/hitalkspace/core/dao/UserDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HiTalkSpace-Core/src/main/java/colin/web/hitalkspace/core/dao/common/CommonDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HiTalkSpace-Core/src/test/java/colin/test/hitalkspace/CommonDaoTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HiTalkSpace-Core/src/test/java/colin/test/hitalkspace/dao/PropsDaoTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HiTalkSpace-Model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HiTalkSpace-Service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HiTalkSpace-Utils" charset="UTF-8" />

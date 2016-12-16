@@ -10,6 +10,7 @@ import io.netty.handler.logging.LoggingHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.net.InetSocketAddress;
 
@@ -20,6 +21,7 @@ import java.net.InetSocketAddress;
 @Service
 public class ImServerService {
 
+    private Integer IM_SERVER_PORT=9191;
     @Autowired
     private LoggerUtils loggerUtils;
     @Autowired
@@ -54,8 +56,14 @@ public class ImServerService {
         });
         //设定超时
         imServer.option(ChannelOption.CONNECT_TIMEOUT_MILLIS,5000);
-        int port=null!=getPropsVal("port")?Integer.valueOf(getPropsVal("port")):9191;
-        ChannelFuture imServerChannelFuture = imServer.bind(new InetSocketAddress(port));
+        String imPort=getPropsVal("port");
+        if (!StringUtils.isEmpty(imPort)){
+            IM_SERVER_PORT=Integer.valueOf(imPort);
+        }
+        ChannelFuture imServerChannelFuture = imServer.bind(new InetSocketAddress(IM_SERVER_PORT));
+        for(int i=1;i<3;i++){
+            System.out.println("第"+i+"获取属性内容"+getPropsVal("port"));
+        }
         try {
             System.out.println("ImServer服务器已经成功启动！！！");
             imServerChannelFuture.channel().close().sync().awaitUninterruptibly();
@@ -72,7 +80,6 @@ public class ImServerService {
      * @param prosName
      * @return
      */
-    @Cacheable(cacheNames = "propsCache",key = "propsName")
     public String getPropsVal(String prosName){
         return propsDao.getPropsVal(prosName);
     }

@@ -3,6 +3,7 @@ package colin.web.hitalkspace.core.dao;
 import colin.web.hitalkspace.core.dao.common.CommonDao;
 import colin.web.hitalkspace.utils.LoggerUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -24,7 +25,9 @@ public class PropsDao extends CommonDao {
      *
      * @param propsName
      */
+    @Cacheable(value="propsCache",key="#propsName")
     public String getPropsVal(String propsName) {
+        System.out.println("我被执行了");
         Map<String, Object> propsParams = new HashMap<String, Object>();
         propsParams.put("name", propsName);
         List<String> result = super.getSqlManager().select("props.queryPropsVal", String.class, propsParams);

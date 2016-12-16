@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!--扫描service类-->
-    <context:component-scan base-package="colin.web.hitalkspace.business;colin.web.hitalkspace.service;colin.web.hitalkspace.handler" use-default-filters="false"/>
+    <context:component-scan base-package="colin.web.hitalkspace"/>
     <!--加入切面注解-->
     <aop:aspectj-autoproxy/>
     <!--引入切面事务传播行文-->
@@ -26,14 +26,14 @@
     </tx:advice>
     <!--引入事务的切面事务范围-->
     <aop:config>
-        <aop:advisor advice-ref="taAdvice" pointcut="within(colin.web.hitalkspace.service.*)"></aop:advisor>
+        <aop:advisor advice-ref="taAdvice" pointcut="within(colin.web.hitalkspace.business.*)"></aop:advisor>
     </aop:config>
     <!--配置缓存-->
     <cache:annotation-driven cache-manager="cacheManager"/>
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-        <property name="cacheManager" ref="ehcache"></property>
+        <property name="cacheManager" ref="ehcacheFactory"></property>
     </bean>
-    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+    <bean id="ehcacheFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
         <property name="configLocation" value="classpath:ehcache-setting.xml"></property>
     </bean>
     <!--引入DAO内容-->
