@@ -11,37 +11,48 @@ import java.sql.Timestamp;
  * 项目名称 MiniBlog
  * 当前包名 colin.miniblog.core.pojo
  */
-@Table(name = "user")
+@Table(name = "sys_user")
 public class User {
 
   @AutoID
-  private int id;
+  private int userid;
   private String username;
-  private String pwd;
-  private String nickname;
-  private String sign;
+  private String password;
+  private String realname;
   /**
-   * 头像
+   * 部门/11111/dict
    */
-  private String face;
+  private int departid;
   /**
-   * 金币
+   * 类型//select/1,管理员,2,普通用户,3,前台用户,4,第三方用户
    */
-  private int coin;
-  private int sex;
-  private int cur_area;
-  private int email_validate;
-  private int role;
-  private int is_del;
-  private int daren_tree;
-  private Timestamp mtime;
+  private int usertype;
+  private int state;
+  private String thirdid;
+  private String create_time;
+  private String endtime;
+  private String email;
+  private String tel;
+  private String address;
+  private String title_url;
+  private String remark;
+  private String theme;
+  /**
+   * 后台选择站点ID
+   */
+  private int back_site_id;
+  /**
+   * 创建站点ID
+   */
+  private int create_site_id;
+  private int create_id;
 
-  public int getId() {
-    return id;
+  public int getUserid() {
+    return userid;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setUserid(int userid) {
+    this.userid = userid;
   }
 
   public String getUsername() {
@@ -52,99 +63,139 @@ public class User {
     this.username = username;
   }
 
-  public String getPwd() {
-    return pwd;
+  public String getPassword() {
+    return password;
   }
 
-  public void setPwd(String pwd) {
-    this.pwd = pwd;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
-  public String getNickname() {
-    return nickname;
+  public String getRealname() {
+    return realname;
   }
 
-  public void setNickname(String nickname) {
-    this.nickname = nickname;
+  public void setRealname(String realname) {
+    this.realname = realname;
   }
 
-  public String getSign() {
-    return sign;
+  public int getDepartid() {
+    return departid;
   }
 
-  public void setSign(String sign) {
-    this.sign = sign;
+  public void setDepartid(int departid) {
+    this.departid = departid;
   }
 
-  public String getFace() {
-    return face;
+  public int getUsertype() {
+    return usertype;
   }
 
-  public void setFace(String face) {
-    this.face = face;
+  public void setUsertype(int usertype) {
+    this.usertype = usertype;
   }
 
-  public int getCoin() {
-    return coin;
+  public int getState() {
+    return state;
   }
 
-  public void setCoin(int coin) {
-    this.coin = coin;
+  public void setState(int state) {
+    this.state = state;
   }
 
-  public int getSex() {
-    return sex;
+  public String getThirdid() {
+    return thirdid;
   }
 
-  public void setSex(int sex) {
-    this.sex = sex;
+  public void setThirdid(String thirdid) {
+    this.thirdid = thirdid;
   }
 
-  public int getCur_area() {
-    return cur_area;
+  public String getCreate_time() {
+    return create_time;
   }
 
-  public void setCur_area(int cur_area) {
-    this.cur_area = cur_area;
+  public void setCreate_time(String create_time) {
+    this.create_time = create_time;
   }
 
-  public int getEmail_validate() {
-    return email_validate;
+  public String getEndtime() {
+    return endtime;
   }
 
-  public void setEmail_validate(int email_validate) {
-    this.email_validate = email_validate;
+  public void setEndtime(String endtime) {
+    this.endtime = endtime;
   }
 
-  public int getRole() {
-    return role;
+  public String getEmail() {
+    return email;
   }
 
-  public void setRole(int role) {
-    this.role = role;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
-  public int getIs_del() {
-    return is_del;
+  public String getTel() {
+    return tel;
   }
 
-  public void setIs_del(int is_del) {
-    this.is_del = is_del;
+  public void setTel(String tel) {
+    this.tel = tel;
   }
 
-  public int getDaren_tree() {
-    return daren_tree;
+  public String getAddress() {
+    return address;
   }
 
-  public void setDaren_tree(int daren_tree) {
-    this.daren_tree = daren_tree;
+  public void setAddress(String address) {
+    this.address = address;
   }
 
-  public Timestamp getMtime() {
-    return mtime;
+  public String getTitle_url() {
+    return title_url;
   }
 
-  public void setMtime(Timestamp mtime) {
-    this.mtime = mtime;
+  public void setTitle_url(String title_url) {
+    this.title_url = title_url;
+  }
+
+  public String getRemark() {
+    return remark;
+  }
+
+  public void setRemark(String remark) {
+    this.remark = remark;
+  }
+
+  public String getTheme() {
+    return theme;
+  }
+
+  public void setTheme(String theme) {
+    this.theme = theme;
+  }
+
+  public int getBack_site_id() {
+    return back_site_id;
+  }
+
+  public void setBack_site_id(int back_site_id) {
+    this.back_site_id = back_site_id;
+  }
+
+  public int getCreate_site_id() {
+    return create_site_id;
+  }
+
+  public void setCreate_site_id(int create_site_id) {
+    this.create_site_id = create_site_id;
+  }
+
+  public int getCreate_id() {
+    return create_id;
+  }
+
+  public void setCreate_id(int create_id) {
+    this.create_id = create_id;
   }
 }

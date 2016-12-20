@@ -8,4 +8,5 @@ package colin.web.hitalkspace.utils;
  */
 
 public class CommonUtils {
+
 }

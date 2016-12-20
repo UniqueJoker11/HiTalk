@@ -6,7 +6,7 @@ import org.beetl.sql.core.annotatoin.Table;
  * @author LinQiang on 2016/12/15.
  * @reviewer
  */
-@Table(name = "props")
+@Table(name = "sys_props")
 public class Props {
     private String name;
     private String value;

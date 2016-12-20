@@ -6,6 +6,7 @@ import org.beetl.sql.core.db.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 创建人 LinQiang
@@ -24,7 +25,7 @@ public class UserDao extends CommonDao {
   public User insertUser(User user){
     KeyHolder keyHolder=new KeyHolder();
     super.getSqlManager().insert(User.class,user,keyHolder);
-    user.setId(keyHolder.getInt());
+    user.setUserid(keyHolder.getInt());
     return user;
   }
 
@@ -33,8 +34,8 @@ public class UserDao extends CommonDao {
    * @param user
    * @return
    */
-  public User valdiateUser(User user){
-    List<User> userList=super.getSqlManager().select("user.validateLogin",User.class,user);
+  public User getUserInfo(Map<String,Object> params){
+    List<User> userList=super.getSqlManager().select("user.validateLogin",User.class,params);
     if(userList!=null&&!userList.isEmpty()){
       return userList.get(0);
     }else {
