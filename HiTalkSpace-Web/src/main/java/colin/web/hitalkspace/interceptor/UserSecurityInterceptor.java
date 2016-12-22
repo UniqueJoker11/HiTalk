@@ -47,6 +47,7 @@ public class UserSecurityInterceptor extends HandlerInterceptorAdapter {
             String psdInSession = ((User) httpSession.getAttribute(username)).getPassword();
             if (!StringUtils.isEmpty(psdInSession)) {
                 if (psdInSession.equals(AESUtil.decrypt(password))) {
+                    request.setAttribute("user",username);
                     return true;
                 }
             }

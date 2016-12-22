@@ -18,7 +18,7 @@ public class CommonDao {
   @Qualifier("sqlManager")
   private SpringBeetlSql springBeetlSql;
 
-  public SQLManager getSqlManager() {
+  protected SQLManager getSqlManager() {
     return springBeetlSql.getSQLMananger();
   }
 }

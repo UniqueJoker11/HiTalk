@@ -12,4 +12,8 @@ public class Constant {
         public static String SKEY="MIICdwIBCSFh1few";
 
     }
+    public static class ERROR{
+        //参数为空错误
+        public static int PARAMS_EMPTY_ERROR=1001;
+    }
 }
