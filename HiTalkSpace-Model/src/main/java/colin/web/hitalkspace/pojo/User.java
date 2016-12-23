@@ -3,6 +3,7 @@ package colin.web.hitalkspace.pojo;
 import org.beetl.sql.core.annotatoin.AutoID;
 import org.beetl.sql.core.annotatoin.Table;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -12,7 +13,7 @@ import java.sql.Timestamp;
  * 当前包名 colin.miniblog.core.pojo
  */
 @Table(name = "sys_user")
-public class User {
+public class User implements Serializable{
 
   @AutoID
   private int userid;

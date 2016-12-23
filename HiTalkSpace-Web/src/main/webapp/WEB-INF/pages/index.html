@@ -61,7 +61,7 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	<!--加载Vue-->
-	<script src="${ctxPath}/plugins/modernizr/js/modernizr.js"></script>
+	<script src="${ctxPath}/js/vue.min.js"></script>
 
 </head>
 
@@ -227,7 +227,7 @@
 						<img src="${ctxPath}/img/avatar.jpg" class="img-circle" alt="" />
 					</figure>
 					<div class="profile-info">
-						<span class="name">John Smith Doe</span>
+						<span id="app" class="name">{{username}}</span>
 						<span class="role"><i class="fa fa-circle bk-fg-success"></i> Administrator</span>
 					</div>
 					<i class="fa custom-caret"></i>

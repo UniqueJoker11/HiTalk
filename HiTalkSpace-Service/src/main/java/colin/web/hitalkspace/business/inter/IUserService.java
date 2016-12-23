@@ -1,7 +1,7 @@
 package colin.web.hitalkspace.business.inter;
 
 
-import colin.web.hitalkspace.pojo.Menu;
+import colin.web.hitalkspace.model.UserMenu;
 import colin.web.hitalkspace.pojo.Role;
 import colin.web.hitalkspace.pojo.User;
 
@@ -61,5 +61,5 @@ public interface IUserService {
      * @param username
      * @return
      */
-    public List<Menu> getUserMenusInfo(String username);
+    public List<UserMenu> getUserMenusInfo(String username);
 }

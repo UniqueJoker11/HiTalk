@@ -133,34 +133,38 @@ public class UserService implements IUserService {
             for (Menu menu : userMenuInfo) {
                 if (menu.getParentid() == 0) {
                     userRootMenus.add(menu);
-                }else {
+                } else {
                     userSubMenus.add(menu);
                 }
             }
-
-            return userMenuInfo;
+            List<UserMenu> userMenusResult = this.combineSubUserMenu(userRootMenus, userSubMenus);
+            return userMenusResult;
         }
     }
 
     /**
-     * 组装用户的菜单
+     * 组装用户的菜单(暂且按照二级菜单进行处理)
+     *
      * @param userRootMenus
      * @param userSubMenus
      * @return
      */
-    private List<UserMenu> combineSubUserMenu(List<Menu> userRootMenus,List<Menu> userSubMenus){
-        if (null==userRootMenus||null==userSubMenus||userRootMenus.isEmpty()||userSubMenus.isEmpty()){
+    private List<UserMenu> combineSubUserMenu(List<Menu> userRootMenus, List<Menu> userSubMenus) {
+        if (null == userRootMenus || null == userSubMenus || userRootMenus.isEmpty() || userSubMenus.isEmpty()) {
             return null;
-        }else{
-            for(Menu rootMenu:userRootMenus){
-                int rootId=rootMenu.getId();
-                List<UserMenu> subUserMenuList=new ArrayList<>();
-                for(Menu subMenu:userSubMenus){
-                    if (rootId==subMenu.getParentid()){
-                        subUserMenuList.add()
+        } else {
+            List<UserMenu> userMenus = new ArrayList<>();
+            for (Menu rootMenu : userRootMenus) {
+                UserMenu rootUserMenu = this.wrapperSimpleUserMenu(rootMenu);
+                List<UserMenu> subUserMenuList = new ArrayList<>();
+                for (Menu subMenu : userSubMenus) {
+                    if (rootMenu.getId() == subMenu.getParentid()) {
+                        subUserMenuList.add(this.wrapperSimpleUserMenu(subMenu));
                     }
                 }
+                rootUserMenu.setSubUserMenu(subUserMenuList);
             }
+            return userMenus;
         }
     }
 
@@ -174,7 +178,7 @@ public class UserService implements IUserService {
         if (null == menu) {
             return null;
         }
-        UserMenu userMenu=new UserMenu();
+        UserMenu userMenu = new UserMenu();
         userMenu.setName(menu.getName());
         userMenu.setLevel(menu.getLevel());
         userMenu.setSort(menu.getSort());
